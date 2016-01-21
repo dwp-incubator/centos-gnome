@@ -1,0 +1,28 @@
+# vim:ft=ansible:
+---
+- hosts: all
+  sudo: true
+  tasks:
+    - name: upgrade all packages
+      yum: name=* state=latest
+
+    - name: install gcc
+      yum: name=gcc state=latest
+
+    - name: install unzip
+      yum: name=unzip state=latest
+
+    - name: install make
+      yum: name=make state=latest
+
+    - name: install git
+      yum: name=git state=latest
+
+    - name: install curl
+      yum: name=curl state=latest
+
+    - name: install vim
+      yum: name=vim-enhanced state=latest
+
+    - name: install the 'Gnome desktop' environment group
+      yum: name="@^gnome-desktop-environment" state=present
